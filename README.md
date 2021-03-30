@@ -1,7 +1,6 @@
 Dear non-Russian speaking visitors. My name is Maxim Krivchikov. This page is mostly concerned with teaching at Lomonosov Moscow State University.
-For a material in English, I may refer you to a [page for my elective course in English](https://maxxk.github.io/programming-languages/)
-
-and to the [list of my papers at Scopus](https://www.scopus.com/authid/detail.uri?authorId=55481037300)
+You may be interested in [list of my papers at Scopus](https://www.scopus.com/authid/detail.uri?authorId=55481037300)
+and in [page for my elective course in English](https://maxxk.github.io/programming-languages/).
 
 <!-- Bonus: http mirror for my once-a-year-updated gemlog: https://maxxk.me/ -->
 
