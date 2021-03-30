@@ -1,7 +1,11 @@
 Dear non-Russian speaking visitors.
+
 My name is Maxim Krivchikov.
+
 This page is mostly concerned with teaching at Lomonosov Moscow State University.
+
 For a material in English, I may refer you to the page for my elective course in English: https://maxxk.github.io/programming-languages/
+
 and to the list of my papers at Scopus: https://www.scopus.com/authid/detail.uri?authorId=55481037300
 
 <!-- Bonus: http mirror for my once-a-year-updated gemlog: https://maxxk.me/ -->
@@ -9,7 +13,9 @@ and to the list of my papers at Scopus: https://www.scopus.com/authid/detail.uri
 # Максим Александрович Кривчиков
 
 Приветствую вас на моей странице на GitHub!
+
 Я — кандидат наук, старший научный сотрудник Московского государственного университета.
+
 GitHub Pages я использую в основном для размещения материалов для групп, у которых я преподаю на мехмате.
 
 - https://istina.msu.ru/profile/maxxk/ — моя страница в системе «ИСТИНА» с научными публикациями, докладами и прочими результатами моей работы
