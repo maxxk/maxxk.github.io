@@ -5,6 +5,7 @@ and in [page for my elective course in English](https://maxxk.github.io/programm
 <!-- Bonus: http mirror for my once-a-year-updated gemlog: https://maxxk.me/ -->
 
 # Максим Александрович Кривчиков
+
 [maxim.krivchikov@gmail.com](mailto:maxim.krivchikov@gmail.com)
 
 Приветствую вас на моей странице на GitHub!
@@ -16,6 +17,8 @@ GitHub Pages использую в основном для размещения 
 - [https://istina.msu.ru/profile/maxxk/](https://istina.msu.ru/profile/maxxk/) — моя страница в системе «ИСТИНА» с научными публикациями, докладами и прочими результатами моей работы
 - [https://maxxk.github.io/formal-models/](https://maxxk.github.io/formal-models/) — спецкурс «Математические модели вычислений» (полугодовой курс «по выбору кафедры», который я читаю для 5 курса в осеннем семестре)
 - [https://maxxk.github.io/programming-languages/](https://maxxk.github.io/programming-languages/) — спецкурс «Математические модели программ и языков программирования» (полугодовой курс на английском языке/«по выбору кафедры», который я читаю для 5 курса в весеннем семестре)
+
+- [Темы курсовых и дипломных работ](/advisorship/)
 
 На время дистанционных занятий для координации я использую VK:
 - [https://vk.com/maxim.krivchikov](https://vk.com/maxim.krivchikov) — мой профиль (можно писать в личные сообщения)
