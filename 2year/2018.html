@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        html { height: 100%; }
+body {  max-width:1366px; height:100%; margin-top: 0;  margin-bottom: 0; margin-left:auto; margin-right:auto; padding: 0;  background-color: #fff;  color: #000;  font-size: 16px; font-family:sans-serif,sans,verdana; }
+#outer{ min-height: 93%; background:#fff; }
+* html #outer { height:93% }
+
+a { color: black; }
+a:visited { color: black; }
+a:hover { color: black; }
+p a {  color: #00a; text-decoration: none; }
+p a:visited {  color: #00a; text-decoration: none;  }
+p a:hover {  text-decoration: none; }
+h2 {  color: black;  line-height: 1.6;  font-size: 120%;  }
+h2 a {  color: black;  line-height: 1.6;  }
+h2 a:visited {  color: black;  line-height: 1.6;  }
+h2 a:hover {  color: black;  line-height: 1.6;  }
+h3 {  color: black;  padding: 0; margin: 1.2em 0 0 0; line-height: 1.6;  font-size: 110%;  }
+h3 a {  color: black;  line-height: 1.6;  }
+h3 a:visited {  color: black;  line-height: 1.6;  }
+h3 a:hover {  color: black;  line-height: 1.6;  }
+p { line-height: 1.6;  font-size: 90%;  }
+ul { text-indent: 0em;  padding-left: 0em;  margin: 0 0 0 1.5em;  font-size: 90%;  }
+li { text-indent: 0em;  padding-left: 0.2em;  padding-bottom: 0.5em;  margin: 0;  line-height: 1.6;  }
+
+#top, .content, #footer {  width:expression(document.body.clientWidth > 1366 ? "1366px": "auto"); }
+
+#top {  margin-left:auto; margin-right:auto; background-color: #e0e0e0; padding: 0.7em 1em 0.7em 1em;  line-height: 1.3; }
+#top p {  color: #000;  margin: 0;  text-align: center;  }
+
+#toptitle {  position: relative;  right: 0;  max-width: 100%;  }
+#toptitle p {  font-size: 110%;  font-weight: bold;  margin: 0; line-height: 1.3; }
+#toptitle a {  color: #000; text-decoration: none; }
+#toptitle a:visited {  color: #000;  text-decoration: none;  }
+#toptitle a:hover {  color: #000;  text-decoration: none;  }
+
+#footer {  min-height:3%;margin-left:auto; margin-right:auto; margin-top:1em; background:#f0f0f0; padding: 0.5em 0em 0.5em 0em;  font-size: 70%;  clear: both;  text-align: center;  }
+#footer p {  color: #444; padding: 0; margin:0.2em 0; text-align: left; text-align: center; }
+#footer a {  color: #444;  }
+#footer a:visited {  color: #444;  }
+
+.content { font-size: 100%; margin-left:auto; margin-right:auto; width:100%; background:#fff; }
+
+.announcement-container { font-size: 100%; margin-left:auto; margin-right:auto; padding-bottom: 0.5em; width:100%; background:#fff; clear:both; }
+.announcement { line-height:1.5;  padding: 0 0 1em 0;  margin:1.5em 0 1em 0; width: 80%; margin-left:auto; margin-right:auto; border-top: 0px solid gray; border-bottom: 2px solid gray; background:#fff;}
+.announcement .head {  padding: 0.5em 0 0.5em 0;  text-align: center;  }
+.announcement .head p {  font-size: 150%;  line-height: 1.5;  padding: 0em 0em;  margin: 0;  }
+.announcement .head .time p {  font-size: 150%;  color: red;  font-weight: bold;  }
+.announcement .head .place p {  font-size: 100%;  line-height: 1.2;  padding: 0.5em 0 0 0;  }
+.announcement p {  font-size: 110%;  font-weight: normal;  padding: 0.2em 0em;  margin: 0;  }
+.announcement .authors {  padding: 1em 5% 0.3em 5%;  text-align: center;  font-weight: bold;  }
+.announcement .title {  padding: 0.2em 5% 0.5em 5%;  text-align: center;  font-weight: bold;  }
+.announcement .title p {  font-size: 100%;  line-height: 1.5;  text-align: justify;  }
+.announcement .title p em {  font-style: italic;  }
+.announcement .desc {  width: 90%; margin-left:auto; margin-right:auto; font-size: 80%;  line-height:1.6;  padding: 0.5em 0 0em 0;  }
+.announcement .desc p  {  text-align: justify;  text-indent: 4em;  padding: 0.2em 0em;  margin: 0;  }
+.announcement .desc ul {  text-indent: 0em;  padding-left: 4em;  margin: 0 0 0 1.5em;  }
+.announcement .desc ol {  text-indent: 0em;  padding-left: 4em;  margin: 0 0 0 1.5em;  }
+.announcement .desc li {  font-size: 125%; text-indent: 0em;  padding-left: 0.2em;  padding-top: 0;  padding-bottom: 0;  margin: 0 0 0 1em;  }
+
+.events-container { font-size: 100%; margin-left:auto; margin-right:auto; padding-bottom: 0; width:100%; background:#fff; }
+.events { font-size: 100%; margin-left:auto; margin-right:auto; padding-bottom: 0; width:80%; background:#fff; }
+.events a { color: #000; text-decoration: underline; }
+.events a:visited { color: #000; text-decoration: underline; }
+.events a:hover { color: #000; text-decoration: underline; }
+.events .contents { font-size: 80%; }
+.event {  font-size: 100%;  padding: 0.5em 0.5em 0.5em 0.5em;  text-align: left;  }
+.event .date {  color:#000;  padding: 0.2em 0 0.2em 0;  }
+.event .date a {  color:#e00;  font-weight: bold;  padding: 0.2em 0 0.2em 0;  }
+.event .date a:visited {  color:#e00;  font-weight: bold;  padding: 0.2em 0 0.2em 0;  }
+.event .date a:hover {  color:#e00;  font-weight: bold;  padding: 0.2em 0 0.2em 0;  }
+.event .talk {  padding: 0.3em 0 0.3em 0;  }
+.event .talk a:visited {  text-decoration:none; }
+.event .talk a:hover {  text-decoration:none; }
+.event .talk .photo {  padding: 0; margin: 0 0 1em 1em; border: 0; float: right; }
+.event .talk .photo img {  padding: 2px; margin: 0px; border: 1px solid gray; }
+.event .talk .authors {  padding: 0.2em 0 0.2em 0;  line-height: 1.6;  }
+.event .talk .title {  padding: 0 0 0.2em 0;  line-height: 1.6;  }
+.event .talk .title p {  padding: 0 0 0 0;  line-height: 1.6;  }
+.event .talk .desc {  font-size: 80%;  padding: 0.5em 0 0em 0;  }
+.event .talk .desc p  {  text-align: justify;  text-indent: 4em;  padding: 0.2em 0em;  margin: 0;  }
+.event .talk .desc ul {  text-indent: 0em;  padding-left: 4em;  margin: 0 0 0 1.5em;  }
+.event .talk .desc ol {  text-indent: 0em;  padding-left: 4em;  margin: 0 0 0 1.5em;  }
+.event .talk .desc li {  text-indent: 0em;  padding-left: 0.2em;  padding-top: 0;  padding-bottom: 0;  margin: 0;  }
+.event .talk .desc li ul {  text-indent: 0em;  padding-left: 2em;  padding-top: 0;  padding-bottom: 0;  margin: 0;  }
+.event .talk .desc li ol {  text-indent: 0em;  padding-left: 2em;  padding-top: 0;  padding-bottom: 0;  margin: 0;  }
+.event .talk .desc li p {  text-indent: 0em;  padding-left: 0em;  padding-top: 0;  padding-bottom: 0em;  margin: 0;  }
+.event .talk .files {  font-size: 90%;  padding: 0.5em 0 0em 0;  }
+.event .talk .files ul {  text-indent: 0em;  padding-left: 3.2em;  margin: 0 0 0 1.5em;  list-style-type:square; }
+.event .talk .files li {  text-indent: 0em;  padding-left: 0.2em;  padding-top: 0;  padding-bottom: 0;  margin: 0;  }
+
+.future { color: #333; background: #fff; }
+.future .date {  color:#333; padding: 0.2em 0 0.2em 0;  }
+.future .date a {  color:#e33;  font-weight: bold;  padding: 0.2em 0 0.2em 0;  }
+
+.nav { width:98%; padding: 0 1%; margin-left:auto; margin-right:auto; font-size: 90%; line-height: 1.3; clear:left; text-align:center; background:#fff;}
+.nav p {  position:relative; padding: 0.5em; text-align: center; font-size: 100%;  line-height: 1.3;  margin: 0.5em 0.5em; }
+.nav a {  color: black;  }
+.nav a:visited {  color: black; text-decoration: underline;  }
+.nav a:hover {  color: black; text-decoration: underline;  }
+
+.nav2 p {  padding: 0.2em 0%; }
+.nav3 p {  padding: 0.2em 0%; }
+
+.nav .ev1w { display: -moz-inline-stack; display:inline-block; zoom:1; *display: inline; width:20em; margin:0 1%; vertical-align:top; background:#fff;}
+.nav .ev1c { float:right; width:99%; min-height:3em; background:#fff;}
+.nav .ev1p { position:relative; right:0.1em; float:right; width:99%; margin-top:0; margin-bottom:0.5em; color:black; font-size: 75%; text-align: left; line-height: 1.5; background:#fff;}
+.nav .ev1p .date {  color:#800;  font-weight: bold;  padding: 0;  }
+.nav .ev1p .date a {  color:#800;  font-weight: bold;  padding: 0;  }
+.nav .ev1p .talk {  padding: 0.3em 0 0.3em 0; clear:both; }
+.nav .ev1p .talk .photo {  padding: 0; margin: 0; border: 0; float: right;}
+.nav .ev1p .talk .photo img {  padding: 2px; margin: 0px 0 1em 0; border: 1px solid gray; }
+.nav .ev1p .talk .authors {  font-style: normal;  padding: 0;  display: inline;  }
+.nav .ev1p .talk .title {  padding: 0 0 0.2em 0;  display: inline;  }
+.nav .ev1p .talk .title p {  padding: 0 0 0 0;  }
+
+.nav .ev2w { display: -moz-inline-stack; display:inline-block; zoom:1; *display: inline; width:20em; margin:0 1%; vertical-align:top; background:#fff;}
+.nav .ev2c { float:right; width:99%; min-height:3em; background:#fff;}
+.nav .ev2p { position:relative; right:0.1em; float:right; width:99%; margin-top:0; margin-bottom:0.5em; color:black; font-size: 75%; text-align: left; line-height: 1.5; background:#fff;}
+.nav .ev2p .date {  color:#800;  font-weight: bold;  padding: 0;  }
+.nav .ev2p .date a {  color:#800;  font-weight: bold;  padding: 0;  }
+.nav .ev2p .talk {  padding: 0.3em 0 0.3em 0; clear:both; }
+.nav .ev2p .talk a {  color:black; text-decoration:underline; }
+.nav .ev2p .talk a:visited {  color:black; text-decoration:underline; }
+.nav .ev2p .talk a:hover {  color:black; text-decoration:underline; }
+.nav .ev2p .talk .photo {  padding: 0; margin: 0; margin-right: 0.5em; margin-bottom:1em; border: 0; float: left;}
+.nav .ev2p .talk .photo img {  padding: 2px; margin: 0px 0 1em 0; border: 1px solid gray; }
+.nav .ev2p .talk .authors {  font-style: normal;  padding: 0;  display: inline;  }
+.nav .ev2p .talk .title {  padding: 0 0 0.2em 0;  display: inline;  }
+.nav .ev2p .talk .title p {  padding: 0 0 0 0;  }
+
+.navcols { margin-left:auto; margin-right:auto; clear:both; margin:0; width:100%; background:#f0f0f0; padding-bottom:0; text-align:center }
+.navcolwrap { display: -moz-inline-stack; display:inline-block; zoom:1; *display: inline; width:15em; margin-top:0; vertical-align:top; background:#f0f0f0; }
+.navcol { float:right; width:99%; min-height:1em; padding-top:1em;background:#f0f0f0; }
+.navcolpad { font-size:90%; right:0.1em; float:right; width:99%; margin-top:0; padding-bottom:0.5em; margin-bottom:0.5em; color:black; }
+.navcolpad p { text-align:left; margin:0; padding:0; line-height:1.5em; }
+.navcolpad .lnk p { font-weight:bold; color:black; }
+.navcolpad .lnk p a { text-decoration:underline; color:black; }
+.navcolpad .lnk p a:visited { text-decoration:underline; color:black; }
+.navcolpad .sublnk p { font-size: 80%; font-weight:normal; text-decoration:none; }
+.navcolpad .sublnk p a { font-size: 90%; text-decoration:underline; color:black; }
+.navcolpad .sublnk p a:visited { font-size: 90%; text-decoration:underline; color:black; }
+.navcolpad .sublnk p a.info span.link { text-decoration:underline; color:black; }
+.navcolpad .sublnk p a.info { font-size: 90%; position:relative; text-decoration:none; color:black; }
+.navcolpad .sublnk p a.info:hover { z-index:100; background:#fff; text-decoration:none; }
+.navcolpad .sublnk p a.info span.talk { display: none; }
+.navcolpad .sublnk p a.info:hover span.talk { display:block; font-size:120%; position:absolute; top:2em; left:-14em; width:30em; border:1px solid #888; background:#ddd; color:#000; text-align: left; padding:0.5em; padding-top:0.7em;}
+.navcolpad .sublnk p a.info span.talk { line-height: 1.5; }
+.navcolpad .sublnk p a.info span.talk img.photo { float:left; padding: 2px; margin: 0 0.5em 0 0; border: 1px solid gray; }
+
+.course { margin: 0.5em 0; padding: 0; max-width: 45em; }
+.course p a { color: black; }
+.course p a:hover { color: black; }
+.course p { margin: 0; padding: 0; } 
+.courseprog { margin: 1em 0; padding: 0; }
+.courseprog .title { max-width: 30em; margin-left: auto; margin-right: auto; margin-bottom: 1.5em; padding: 0; }
+.courseprog .title p { text-align: center; text-indent: 0; margin: 0; padding: 0; }
+.courseprog p  {  font-size: 100%; text-align: justify;  text-indent: 4em;  padding: 0.2em 0em;  margin: 0;  }
+.courseprog ul {  font-size: 100%; text-align: left; text-indent: 0em;  padding-left: 4em;  margin: 0 0 0 1.5em;  }
+.courseprog ul p {  font-size: 100%; text-align: left; text-indent: 0em;  padding-left: 0em;  margin: 0 0 0 1.5em;  }
+.courseprog ol {  font-size: 100%; text-align: left; text-indent: 0em;  padding-left: 4em;  margin: 0 0 0 1.5em;  }
+.courseprog ol p {  font-size: 100%; text-align: left; text-indent: 0em;  padding-left: 0em;  margin: 0 0 0 1.5em;  }
+.courseprog li {  font-size: 100%; text-align: left; text-indent: 0em;  padding: 0 0 0 0;  margin: 0;  }
+.courseprog li li {  font-size: 100%; text-align: left; text-indent: 0em;  padding: 0 0 0 0;  margin: 0;  }
+.courseprog li p {  font-size: 100%; text-align: left; text-indent: 0em;  padding-left: 1em;  margin: 0;  }
+
+.associates {
+	margin-top: 2ex;
+}
+
+.associates li {
+	display: block;
+	list-style: none;
+	margin-bottom: 1ex;
+}
+
+.associates li:target {
+  background-color: #f0f0f0;
+}
+
+.associates .name {
+	font-size: 1.2em;
+}
+
+.associates .position {
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+.description p {
+	text-aling: justify;
+	text-indent: 4em;  padding: 0.2em 0em;  margin: 0;
+}
+
+.description ul {  text-indent: 0em;  padding-left: 4em;  margin: 0 0 0 1.5em;  }
+.description ol {  text-indent: 0em;  padding-left: 4em;  margin: 0 0 0 1.5em;  }
+.description li {  text-indent: 0em;  padding-left: 0.2em;  padding-top: 0;  padding-bottom: 0;  margin: 0;  }
+
+.up-h4 {
+	margin-top: -1ex;
+}
+    </style>
+</head>
+<body>
+<div class="events">
+    <h4 style="text-align:center">
+        Научная группа 
+        <br/>
+        «Фундаментальные проблемы программной инженерии» 
+        <br/>
+        (Механико-математический факультет,
+        <br/>
+        Институт проблем информационной безопасности,
+        <br/>
+        НИИ&nbsp;механики&nbsp;МГУ)
+    </h4>
+
+    <div class="description">
+        <p style="text-align:center">
+            <b>Для студентов 2 курса механико-математического факультета МГУ, желающих заниматься научной деятельностью в области математического и программного обеспечения сложных информационно-вычислительных систем.
+            </b>
+        </p>
+
+        <p style="text-align:justify">
+            Коллектив преподавателей и научных сотрудников, ведущих научную работу со студентами кафедры 
+            вычислительной математики механико-математического факультета МГУ по теме «Математическое и программное обеспечение защищенных 
+            информационных технологий» (научный руководитель - д.ф.-м.н., проф. В.А.Васенин) приглашает студентов 2-го курса на встречи, посвящённые обсуждению 
+            направлений исследований и задач, которые могут быть предложены в качестве будущих курсовых и дипломных работ. 
+            <br/>
+             На этой странице представлена подробная информация об 
+            <a href="#dir">основных направлениях</a>
+             научной работы, списки публикаций, а также контактные данные 
+            <a href="#associates">наших сотрудников</a>
+            . 
+            <br/>
+             Под нашим руководством вы сможете вести научную работу по очень востребованной на практике теме:
+        </p>
+        <p style="text-align:center">
+            <b>Фундаментальные проблемы инженерии больших сложно организованных программных комплексов</b>
+        </p>
+
+        <p style="text-align:justify">
+        Вводные лекции и обсуждение задач, которые востребованы на отдельных направлениях исследований состоятся по средам в 16:45 в ауд. 14-08 Главного здания МГУ в следующие сроки:
+        </p>
+
+        <p style="text-align:center">
+            <b>28 марта 2018 года, 16:45, аудитория 14-08</b>
+        </p>
+        <p style="text-align:justify">
+            <b>
+                <a href="#dir1">Направление&nbsp;1.</a>
+            </b>
+             Математическое и программное обеспечение автоматизированных систем сбора и интеллектуального анализа больших объемов наукометрической информации (с применением в системе ИАС «ИСТИНА»)
+        </p>
+
+        <p style="text-align:justify">
+            Руководители направления: 
+            <a href="#vasenin">Валерий Александрович Васенин</a>
+            , 
+            <a href="#afonin">Сергей Александрович Афонин</a>
+            , 
+            <a href="#kozitsyn">Александр Сергеевич Козицын</a>
+        </p>
+
+        <p style="text-align:justify">
+            <b>
+                <a href="#dir2">Направление&nbsp;2.</a>
+            </b>
+             Модели и программные механизмы разграничения доступа к ресурсам больших систем в социальных сетях (на примере системы ИАС «ИСТИНА»).
+        </p>
+
+        <p style="text-align:justify">
+            Руководители направления: 
+            <a href="#vasenin">Валерий Александрович Васенин</a>
+            , 
+            <a href="#itkes">Александр Александрович Иткес</a>
+        </p>
+
+        <p style="text-align:center">
+            <b>4 апреля 2018 года, 16:45, аудитория 14-08</b>
+        </p>
+        <p style="text-align:justify">
+            <b>
+                <a href="#dir3">Направление&nbsp;3.</a>
+            </b>
+             Разработка и реинжиниринг программ для современных и перспективных высокопроизводительных платформ. 
+        </p>
+
+        <p style="text-align:justify">
+            Руководители направления: 
+            <a href="#vasenin">Валерий Александрович Васенин</a>
+            , 
+            <a href="#roganov">Владимир Александрович Роганов</a>
+        </p>
+
+        <p style="text-align:justify">
+            <b>
+                <a href="#dir4">Направление&nbsp;4.</a>
+            </b>
+             Агент-ориентированные технологии моделирования социальных и интеллектуальных социальных и технических систем (IoE). 
+        </p>
+
+        <p style="text-align:justify">
+            Руководители направления: 
+            <a href="#vasenin">Валерий Александрович Васенин</a>
+            , 
+            <a href="#roganov">Владимир Александрович Роганов</a>
+        </p>
+
+        <p style="text-align:center">
+            <b>4 апреля 2018 года, 16:45, аудитория 14-08</b>
+        </p>
+        <p style="text-align:justify">
+            <b>
+                <a href="#dir5">Направление&nbsp;5.</a>
+            </b>
+             Методы и средства разработки новых предметно-ориентированных языков программирования с заданной формальной семантикой.
+        </p>
+
+        <p style="text-align:justify">
+            Руководитель направления: 
+            <a href="#vasenin">Валерий Александрович Васенин</a>
+            , 
+            <a href="#krivchikov">Максим Александрович Кривчиков</a>
+        </p>
+
+        <h3 id="dir">Направления</h3>
+
+        <h4 id="dir1">Математическое и программное обеспечение автоматизированных систем сбора и интеллектуального анализа больших объемов наукометрической информации (с применением в системе ИАС «ИСТИНА»)</h4>
+
+        <p style="text-align:justify">
+            Руководители направления: 
+            <a href="#vasenin">Валерий Александрович Васенин</a>
+            , 
+            <a href="#afonin">Сергей Александрович Афонин</a>
+            , 
+            <a href="#kozitsin">Александр Сергеевич Козицын</a>
+        </p>
+
+        <p style="text-align:justify">В последние годы потребность в создании информационно-аналитической системы подготовки принятия решений на основе анализа данных научно- инновационного и образовательного содержания настоятельно обозначается на всех уровнях национальной инфраструктуры управления образованием и наукой. Основная посылка (мотив) такой потребности и интереса: создать Систему, инструментальные средства которой позволяли бы оперативно анализировать (по различным срезам и, соответственно запросам) надежно верифицируемые данные как персональные и обобщенные по отдельным научным коллективам и организациям (вузам, НИИ т.п.), так и данные, обобщенные по регионам и по России в целом, с целью получения с высокой степенью объективности оценки показателей результативности и/или тенденции (тренды) научно-педагогической и инновационно-внедренческой деятельности.</p>
+
+        <p style="text-align:justify">
+            С 2011 года в Московском университете разрабатывается информационно-аналитическая система Информационная Система Тематического Исследования НАукометрической информации - 
+            <a href="http://istina.msu.ru/">«ИСТИНА»</a>
+            , целью которой является сбор, обработка, анализ и выдача по запросу информации о результатах деятельности сотрудников университета. В настоящее время систему используют все факультеты и научно-исследовательские институты МГУ, ряд организаций Российской академии наук, институтов Минздрава России и вузов. Система представляет не только практическую ценность, но также является полигоном для апробации и тестирования наукоемких алгоритмов обработки текстов на естественном языке (выделение терминов, классификация, кластеризация), построения моделей предметных областей (онтологий и тезаурусов), моделей анализа эффективности научной деятельности, анализа социальных сетей и методов решения множества других задач, имеющих как теоретическое, так и практическое значение. Участвуя в проекте ИСТИНА, студенты смогут использовать объемную базу данных и инфраструктуру проекта для выполнения курсовых, дипломных и диссертационных работ. Кроме этого, принимая участие в этом проекте, студенты могут получить актуальный опыт веб-разработки крупных систем с использованием современных технологий (Python, Django, jQuery и т.д.)
+        </p>
+
+        <h4 id="dir2">Модели и программные механизмы разграничения доступа к ресурсам больших систем в социальных сетях (на примере системы ИАС «ИСТИНА») </h4>
+
+        <p style="text-align:justify">
+            Руководители направления: 
+            <a href="#vasenin">Валерий Александрович Васенин</a>
+            , 
+            <a href="#itkes">Александр Александрович Иткес</a>
+        </p>
+
+        <p style="text-align:justify">Разработка моделей и механизмов разграничения доступа к ресурсам больших систем в социальных сетях являются актуальным направлением исследований в области обеспечения информационной безопасности. В рамках этого направления рассматриваются задачи разработки специализированных моделей логического разграничения доступа, которые позволили бы эффективным образом формулировать и применять сложные декларативные правила доступа, учитывающие отношения между объектами в современных многопользовательских системах. Создание таких моделей подразумевает разработку формальных языков описания правил разграничения доступа и эффективных алгоритмов определения возможности доступа по заданным правилам. В качестве свойств, учитываемых в моделях разграничения доступа, выступают, например, ограничения на пути в полном и усеченном социальном графе системы, а также другие отношения вида «пользователь-пользователь», «пользователь-объект» и «объект-объект». Создаваемые модели оцениваются с позиций полноты соответствия правил семантике работы целевой системы, компактности представления правил, эффективности работы механизма разграничения доступа на основе модели, снижения количества административных действий по управлению набором правил доступа.</p>
+
+        <p style="text-align:justify">Реальным объектом приложения всех полученных в рамках таких исследований результатом является информационно-аналитическая система ИАС «ИСТИНА», развитие и сопровождение которой ведется в Московском университете.</p>
+
+        <h4 id="dir3">Разработка и реинжиниринг программ для современных и перспективных высокопроизводительных платформ.</h4>
+
+        <p style="text-align:justify">
+            Руководители направления: 
+            <a href="#vasenin">Валерий Александрович Васенин</a>
+            , 
+            <a href="#roganov">Владимир Александрович Роганов</a>
+        </p>
+
+        <p style="text-align:justify">Компьютерные системы стремительно эволюционируют, и технологии программирования также стремительный движутся вперед.   Спектр актуальных на сегодняшний день задач простирается от высокоскоростной обработки больших и объемов данных (Big Data) до микромощных устройств в составе Интернета вещей (IoT). Без применения высокопроизводительных (HPC) и энергоэффективных вычислений, а также современных, гибких методик программирования в этих областях возникают трудности, которые в ближайшем будущем предстоит решить.</p>
+
+        <p style="text-align:justify">Новые способы разработки ПО намного совершеннее прежних; они обеспечивают большую гибкость программ как в части масштабируемости, так и в части адаптации к разнообразным вычислительным устройствам и системам. Методы, используемые при создании таких приложений, находятся на стыке математики и программирования, поэтому здесь возникает много новых,  интересных задач.</p>
+
+        <p style="text-align:justify">Спецкурс «Математические методы высокопроизводительных вычислений», который читается на механико-математическом факультете МГУ, вобрал опыт проведения летних и зимних школ по программированию, а также материалы интернациональных суперкомпьютерных инициатив. Его программа в значительной степени посвящена вышеуказанной тематике, и включает, в том числе, перспективные математические методы синтеза программного кода по высокоуровневой спецификации.</p>
+
+        <p style="text-align:justify">В рамках курса доступно излагаются методики динамического  и статико-динамического распараллеливания программ, а также технологии автоматизации преобразования программного кода в приложении к различным  практическим областям: 
+        <ul>
+            <li>сбор и анализ больших и объемов данных;</li>
+            <li>расчетные коды для сложных задач математической физики;</li>
+            <li>криптоаналитические приложения;</li>
+            <li>агент-ориентированное моделирование;</li>
+            <li>отказоустойчивые вычисления в распределенных системах;</li>
+            <li>неклассические параллельные алгоритмы.</li>
+        </ul>
+        </p>
+
+        <p style="text-align:justify">Рассматриваемые примеры построены на базе опыта применения описываемых методик в реальных проектах, которые в последние годы в значительной степени способствуют развитию данной тематики:  суперкомпьютерные агент-ориентированные модели социальных систем, высокоскоростная (в том числе интеллектуальная) обработка объемных текстовых данных (мониторинг Интернет и СМИ), расчетные коды для аэромеханики и атомной энергетики (теплогидродинамика АЭC), и многое другое. В частности, с 2016-го года ведутся отдельные работы для Фонда Перспективных Исследований (ФПИ), нацеленные на разработку современных многоядерных систем типа Network-on-Chip и программных средств для их эффективного программирования с прицелом на различные классы практических задач.</p>
+
+        <p style="text-align:justify">Предоставляется значительная свобода в выборе как интересных учебных, так и практически-ориентированных задач, а также возможность постепенного продвижения как в научном направлении, так и в сторону участия в актуальных и перспективных работах.  Выбор материала и задач для курсовых и дипломных работ по данной тематике особых проблем не представляет; наиболее активные студенты достаточно быстро публикуются в журналах ВАК, а также принимают полноценное участие в реальных проектах.</p>
+
+        <h4 id="dir4">Агент-ориентированные технологии моделирования социальных и интеллектуальных социальных и технических систем (IoE)</h4>
+
+        <p style="text-align:justify">
+            Руководители направления: 
+            <a href="#vasenin">Валерий Александрович Васенин</a>
+            , 
+            <a href="#roganov">Владимир Александрович Роганов</a>
+        </p>
+
+        <p style="text-align:justify">Технологии Агент-ориентированного моделирования (АОМ) сегодня широко используются для исследования сложных систем, для которых не применимы классические аналитические методы исследования. Они позволяют, в частности, непосредственно воспроизвести известное из опыта наблюдения за системой поведение, а затем изучать на полученной модели варианты развития событий при различных внешних условиях.</p>
+
+        <p style="text-align:justify">Начиная с 2011 года при активном взаимодействии с Центральным Экономико-Математическим Институтом (ЦЭМИ) разрабатывались средства автоматической трансформации кода для агент-ориентированных моделей, разработанных в среде AnyLogic, для моделирования эволюции различных социальных систем и сообществ. На сегодняшний день с разной степенью подробности были рассмотрены следующие модели:
+        <ol>
+            <li>Модель развития научного потенциала</li>
+            <li>Демографическая модель современной Европы</li>
+            <li>Модели распространения эпидемий</li>
+            <li>Поведение толпы во внештатных ситуациях</li>
+            <li>Модели социальных сетей</li>
+        </ol>
+        </p>
+
+        <p style="text-align:justify">Сегодня доклады и публикации на эту тему вызывают острый интерес ввиду их крайней востребованностью в различных практических областях, в том числе:
+        <ol>
+            <li>Экономике</li>
+            <li>Бизнес-планировании</li>
+            <li>Целевой рекламе</li>
+            <li>Компьютерных играх</li>
+            <li>Интернет-сообществах</li>
+        </ol>
+        </p>
+
+        <p style="text-align:justify">Большой интерес проявляет сегодня крупный бизнес в части автоматизации обслуживания клиентов и повышения эффективности Интернет-продаж. Совершенно очевидно, что популярность агент-ориентированных технологий в ближайшее время будет только расти, поэтому для студентов, участвующих в данных работах, данная тематика будет с большой вероятностью не только интересна, но и полезна.</p>
+
+        <p style="text-align:justify">В рамках данного направления предлагаются задачи, связанные как с построением актуальных моделей, так и с высокопроизводительными расчетами, нацеленными на решения связанных с моделями задач.  Студенты приобретают опыт работы с системами агент-ориентированного моделирования, получают возможность публиковать полученные результаты в журналах ВАК. В качестве примера можно привести следующие недавние публикации в «Вестнике» Российской академии наук: «Средства суперкомпьютерных систем для работы с агент-ориентированными моделями» и «Суперкомпьютерные технологии в общественных науках: агент-ориентированные демографические модели».</p>
+        <p style="text-align:justify">В настоящее время значительное внимание уделяется моделированию Интернет-сайтов и социальных сетей.</p>
+
+        <h4 id="dir5">Методы и средства разработки новых предметно-ориентированных языков программирования с заданной формальной семантикой</h4>
+
+        <p style="text-align:justify">
+            Руководитель направления: 
+            <a href="#vasenin">Валерий Александрович Васенин</a>
+            , 
+            <a href="#krivchikov">Максим Александрович Кривчиков</a>
+        </p>
+
+        <p style="text-align:justify">В настоящее время программное обеспечение используется практически во всех сферах жизни человека и общества. При этом программы становятся всё сложнее, а общество всё в большей степени полагается на их корректную и беспребойную работу. Поэтому проблема снижения количества различного рода ошибок в программном обеспечении, особенно — в критически важном, сейчас крайне актуальна. </p>
+
+        <p style="text-align:justify">Одной из областей исследований, связанных с разработкой сложного программного обеспечения, является формальная верификация — подход к контролю качества программ, целью которого является получение строгого математического доказательства того, что программа удовлетворяет некоторым требованиям (спецификациям). Существующие методы формальной верификации сложны в применении даже для небольших программ, а их применение к крупным программным комплексам имеет трудоёмкость значительно выше, чем требуется на все предшествующие процессы разработки в совокупности.</p>
+
+        <p style="text-align:justify">Одним из перспективных направлений исследований, которое позволит применять формальные методы инженерии программ, начиная с самых ранних этапов их жизненного цикла, является языково-ориентированное программирование. В рамках этого подхода при разработке программных комплексов декомпозиция осуществляется, в первую очередь, путём создания набора специализированных языков программирования, адекватно отражающих специфику предметной области (предметно-ориентированных языков). По сравнению с языками программирования общего назначения, предметно-ориентированные языки могут иметь более простую семантику, упрощающую задачу формальной верификации программ на таких языках. Подобные языки, в частности, могут разрабатываться с заданной формальной семантикой на основе существующих или вновь создаваемых математических моделей, отражающих знания о той или иной области приложения программ. Кроме того, такие языки и средства контроля корректности программ могут в дальнейшем использовать Они обладают  специалисты-предметники, которые не имеют большого опыта программирования, но обладают глубокими знаниями в своей предметной области.</p>
+
+        <p style="text-align:justify">Исследования на этом направлении сосредоточены на создании математических моделей, методов и средств, позволяющих разрабатывать новые языки программирования и проводить формальную верификацию программ достаточно просто для того, чтобы интегрировать такой подход в стандартные процессы разработки. Используемые методы основаны на подходах дедуктивной верификации и программирования с зависимыми типами. Дедуктивная верификация — это одна из областей приложения математической логики, которая связана с построением доказательств как вывода в некоторой логической системе. Программирование с зависимыми типами подразумевает использование языков программирования, система типов которых позволяет включать в код программы доказательства её корректности, проверяемые автоматически. Например, в простейшем случае, такие языки позволяют доказать, что вычисление определённой функции всегда завершится успешно, причём результатом вычисления будет натуральное число, которое является произведением двух простых.</p>
+
+        <p style="text-align:justify">По материалам, связанным с исследованиями на этом направлении, в настоящее время на механико-математическом факультете проводятся два спецкурса для студентов 3-6 курса: "Математические модели вычислений" (осенний семестр) и "Математические модели программ и языков программирования" (весенний семестр, на английском языке).</p>
+
+        <p style="text-align:justify">Задачи, доступные на этом направлении, включают исследование и разработку математических моделей, методов и средств в следующих областях: 
+        <ol>
+            <li>предметно-ориентированные языки программирования для различных предметных областей на основе математических моделей таких областей (например, для разработки информационно-аналитических систем);</li>
+            <li>примеры программ, для которых получено математическое доказательство их корректности по отношению к функциональной спецификации;</li>
+            <li>инструментальные средства для создания новых и описания формальной семантики (математической модели) существующих языков программирования — как предметно-ориентированных, так и общего назначения;</li>
+            <li>средства автоматизированного построения доказательств, включая методы частичной автоматизации получения доказательств для моделей предметной области.</li>
+        </ol>
+        </p>
+
+        <p style="text-align:justify">Более подробно с этим направлением можно будет познакомиться на запланированной встрече или в индивидуальном порядке. Для этого необходимо воспользоваться контактами, расположенными на сайте.</p>
+
+    </div>
+    <h3 id="associates">Наши сотрудники</h3>
+
+    <noscript>Для того, чтобы увидеть адреса электронной почты, необходимо разрешить выполнение JavaScript</noscript>
+
+    <ul class="associates">
+
+        <li id="vasenin">
+            <div class="name">Валерий Александрович Васенин</div>
+
+            <div class="position">заведующий лабораторией, доктор физико-математических наук, профессор</div>
+
+            <div class="directions">руководитель исследований</div>
+
+            <div class="contact">НИИ механики МГУ, к. 4</div>
+
+            <div class="contact">
+                <script type="text/javascript">
+                //<![CDATA[
+                //
+                var x = "function f(x){var i,o=\"\",l=x.length;for(i=l-1;i>=0;i--) {try{o+=x.c" +
+                "harAt(i);}catch(e){}}return o;}f(\")\\\"function f(x,y){var i,o=\\\"\\\\\\\"" +
+                "\\\\,l=x.length;for(i=0;i<l;i++){if(i>(30+y))y*=2;y%=127;o+=String.fromChar" +
+                "Code(x.charCodeAt(i)^(y++));}return o;}f(\\\"\\\\zpCTOFJQ\\\\\\\\010PZ@^N@C" +
+                "\\\\\\\\006\\\\\\\\r\\\\\\\\014P\\\\\\\\022[FPP\\\\\\\\nd\\\\\\\\033WZUQJPz" +
+                "7#0!+/)\\\\\\\\010$9>b?;\\\\\\\\023ro$2'08>6\\\\\\\\0317()s,*\\\\\\\\\\\\\\" +
+                "\\N\\\\\\\\003]FL]WS\\\"\\\\,30)\\\"(f};)lo,0(rtsbus.o nruter};)i(tArahc.x=" +
+                "+o{)--i;0=>i;1-l=i(rof}}{)e(hctac};l=+l;x=+x{yrt{)44=!)31/l(tAedoCrahc.x(el" +
+                "ihw;lo=l,htgnel.x=lo,\\\"\\\"=o,i rav{)x(f noitcnuf\")";
+                while (x = eval(x))
+                    ;
+                //-->
+                //]]>
+                </script>
+
+            </div>
+
+            <div class="desc">
+                <a href="http://istina.msu.ru/profile/vasenin/">список публикаций</a>
+            </div>
+        </li>
+
+        <li id="afonin">
+            <div class="name">Сергей Александрович Афонин</div>
+
+            <div class="position">ведущий научный сотрудник, кандидат физико-математических наук</div>
+
+            <div class="directions">
+                интеллектуальный анализ текстовых данных в больших коллекциях; выделение фактов; выявление заданных отношений; рациональные множества регулярных языков; анализ структуры социальных сетей; 
+                <a href="http://serg.tk/">(подробнее)</a>
+            </div>
+
+            <div class="contact">НИИ механики МГУ, к. 119</div>
+
+            <div class="contact">
+                <script type="text/javascript">
+                //<![CDATA[
+                //
+                var x = "function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!25{)rt{y+xx=l;=+;" +
+                "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                "\"(7)11\\\\,1\\\"00\\\\\\\\\\\\t3\\\\00\\\\\\\\36\\\\04\\\\02\\\\\\\\13\\\\" +
+                "0U\\\\34\\\\06\\\\01\\\\\\\\BD01\\\\0[\\\\A^MkM[0T03\\\\\\\\07\\\\0x\\\\PV1" +
+                "7\\\\0U\\\\sl{]7i17\\\\\\\\\\\\j\\\\\\\"x\\\\ybr}77\\\\13\\\\2Lhhc~h*%4k.fh" +
+                "hvtr\\\\\\\\0S01\\\\\\\\25\\\\07\\\\03\\\\\\\\24\\\\0r\\\\\\\\\\\\24\\\\01\\" +
+                "\\03\\\\\\\\21\\\\0\\\\\\\\(\\\"}fo;n uret}r);+)y+^(i)t(eAodrCha.c(xdeCoarC" +
+                "homfrg.intr=So+7;12%={y+)i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r va" +
+                "){,y(x fontincfu)\\\"\")";
+                while (x = eval(x))
+                    ;
+                //-->
+                //]]>
+                </script>
+
+            </div>
+
+            <div class="desc">
+                <a href="http://istina.msu.ru/profile/safonin/">список публикаций</a>
+            </div>
+
+        </li>
+
+        <li id="kozitsyn">
+            <div class="name">Александр Сергеевич Козицын</div>
+            <div class="position">ведущий научный сотрудник, кандидат физико-математических наук</div>
+            <div class="directions">интеллектуальный анализ текстовых данных в больших коллекциях; базы данных</div>
+            <div class="contact">НИИ механики МГУ, к. 119</div>
+            <div class="contact">
+                <script type="text/javascript">
+                //<![CDATA[
+                //
+                var x = "function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!84{)rt{y+xx=l;=+;" +
+                "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                "\"(9),1\\\"\\\\IA^CKT25\\\\0\\\\\\\\\\\\\\\\N\\\\04\\\\02\\\\00\\\\\\\\2A00" +
+                "\\\\\\\\04\\\\0r\\\\\\\\\\\\06\\\\0*\\\\23\\\\03\\\\00\\\\\\\\25\\\\03\\\\0" +
+                "0\\\\\\\\01\\\\0n\\\\\\\\\\\\02\\\\02\\\\03\\\\\\\\04\\\\04\\\\01\\\\\\\\`>" +
+                "77\\\\10\\\\00\\\\\\\\(.4w7>4802\\\\\\\\9)5# +4,&.r(2(-)\\\"\\\\\\\\\\\\c/3" +
+                "4\\\\02\\\\00\\\\\\\\XXSN32\\\\0X\\\\31\\\\06\\\\00\\\\\\\\13\\\\0L\\\\EMwk" +
+                "kon5}wcz{v\\\\w(\\\"}fo;n uret}r);+)y+^(i)t(eAodrCha.c(xdeCoarChomfrg.intr=" +
+                "So+7;12%=;y=iy+9)=1i=f({i+)i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r " +
+                "va){,y(x fontincfu)\\\"\")";
+                while (x = eval(x))
+                    ;
+                //-->
+                //]]>
+                </script>
+            </div>
+            <div class="desc">
+                <a href="http://istina.msu.ru/profile/sasha/">список публикаций</a>
+            </div>
+        </li>
+
+        <li id="korshunov">
+            <div class="name">Андрей Александрович Коршунов</div>
+            <div class="position">ведущий научный сотрудник, кандидат технических наук</div>
+            <div class="directions">мониторинг информационно-вычислительных сред; технологии создания информационных систем</div>
+            <div class="contact">НИИ механики МГУ, к. 119</div>
+            <div class="contact">
+                <script type="text/javascript">
+                //<![CDATA[
+                //
+                var x = "function f(x,y){var i,o=\"\",l=x.length;for(i=0;i<l;i++){if(i>(19+y))" +
+                "y*=2;y%=127;o+=String.fromCharCode(x.charCodeAt(i)^(y++));}return o;}f(\"ua" +
+                "{ucqvt;z5f6[WCQ\\004L\\nH\\025\\013\\010\\007CA\\023W\\036]W]SA^\\033T\\004" +
+                "UW\\007JVV,$j;j&.&:\\n%/)\\014:g<~c`}tknjp!/.$%'K\\\\\\032X\\010N[\\013S\\0" +
+                "24\\t\\n\\030\\016\\006G\\025X\\t\\016\\t\\023\\031\\005P\\020G\\027QLEi<;>" +
+                "%WS-+}a5\\003\\006.anol\\177\\n(k/5cL\\033twt`>QPswd}jLV0.ib7\\005\\003f*$'" +
+                "*\\010R\\\\ zx`S\\037|\\\")L.\\017N\\\\^0?.b\\\"U57>Bb\\020\\\\^3<.b\\\"745" +
+                ">BbH02ZR(\\016N\\\\^2=.b\\\"116RBq,315>BbI32ZR\\\\\\010M0^Z?-\\016\\\"\\\\6" +
+                "6>BbV736RB\\013L0^Z9,\\016\\\"\\\\17>BbN12ZRF\\010O0^Z:,\\016\\\"\\\\112/GH" +
+                "02ZRz\\000L$?r<pM\\006!^$RB\\026F\\\\ ZR&\\000\\0303*&'(\\037P$^$&xCEo\\\"h" +
+                "|kJ\\033r\\177='7\\025Uy*X'w\\026\\nAgba]L\\037ha(v6[\\032oAtov}\\023op` yP" +
+                "\\027rvU35QE7073;GEi?-w7\\nH=?o&xW\\005))-g%RBi963w\\026\\014od=fjY\\020en(" +
+                "v#RR\\\\ Z,#QRi\\\"tohEWy.~&x\\036\\020okrmpK\\030\\\"+\",19)";
+                while (x = eval(x))
+                    ;
+                //-->
+                //]]>
+                </script>
+            </div>
+            <div class="desc">
+                <a href="http://istina.msu.ru/profile/korsh/">список публикаций</a>
+            </div>
+        </li>
+
+        <li id="shundeev">
+            <div class="name">Александр Сергеевич Шундеев</div>
+            <div class="position">ведущий научный сотрудник, кандидат физико-математических наук</div>
+            <div class="directions">распределенные системы; бизнес-процессы; композитные сервисы; интеграция; сервис-ориентированная архитектура (SOA)</div>
+            <div class="contact">НИИ механики МГУ, к. 3</div>
+            <div class="contact">
+                <script type="text/javascript">
+                //<![CDATA[
+                //
+                var x = "function f(x){var i,o=\"\",ol=x.length,l=ol;while(x.charCodeAt(l/13)!" +
+                "=48){try{x+=x;l+=l;}catch(e){}}for(i=l-1;i>=0;i--){o+=x.charAt(i);}return o" +
+                ".substr(0,ol);}f(\")13,\\\"@JBQUH420\\\\[O730\\\\630\\\\320\\\\A200\\\\400\\" +
+                "\\r\\\\600\\\\r\\\\)630\\\\200\\\\300\\\\100\\\\n\\\\620\\\\n\\\\220\\\\N';" +
+                "1=ex500\\\\585{8:3<7710\\\\8()/$< 4h=!/#{/KRT]V030\\\\e500\\\\QSG\\\\\\\\32" +
+                "0\\\\Sr\\\\220\\\\700\\\\@AI_C[_t\\\\RKANWBO{\\\"(f};o nruter};))++y(^)i(tA" +
+                "edoCrahc.x(edoCrahCmorf.gnirtS=+o;721=%y;2=*y))y+13(>i(fi{)++i;l<i;0=i(rof;" +
+                "htgnel.x=l,\\\"\\\"=o,i rav{)y,x(f noitcnuf\")";
+                while (x = eval(x))
+                    ;
+                //-->
+                //]]>
+                </script>
+            </div>
+            <div class="desc">
+                <a href="http://istina.msu.ru/profile/shundeev/">список публикаций</a>
+            </div>
+        </li>
+
+        <li id="krivchikov">
+            <div class="name">Максим Александрович Кривчиков</div>
+
+            <div class="position">старший научный сотрудник, кандидат физико-математических наук</div>
+
+            <div class="directions">распределенные и параллельные вычисления; grid computing; реинжиниринг крупных программных комплексов; формальная семантика языков программирования; формальная верификация</div>
+
+            <div class="contact">НИИ механики МГУ, к. 1</div>
+
+            <div class="contact">
+                <script type="text/javascript">
+                //<![CDATA[
+                //
+                var x = "function f(x){var i,o=\"\",ol=x.length,l=ol;while(x.charCodeAt(l/13)!" +
+                "=49){try{x+=x;l+=l;}catch(e){}}for(i=l-1;i>=0;i--){o+=x.charAt(i);}return o" +
+                ".substr(0,ol);}f(\")22,\\\"CGM\\\\\\\\VM320\\\\^L200\\\\100\\\\610\\\\B700\\" +
+                "\\300\\\\010\\\\500\\\\000\\\\&320\\\\310\\\\010\\\\310\\\\t\\\\300\\\\)7/7" +
+                "u70 6;kv710\\\\?>3a\\\"\\\\" + "$-&-t\\\\>(-,, 4(2T020\\\\PUC[T200\\\\XBY]R_320\\" +
+                "\\l220\\\\HH^Cn\\\\H420\\\\500\\\\610\\\\KHFVHRh0ir~wl{xr\\\"(f};o nruter};" +
+                "))++y(^)i(tAedoCrahc.x(edoCrahCmorf.gnirtS=+o;721=%y{)++i;l<i;0=i(rof;htgne" +
+                "l.x=l,\\\"\\\"=o,i rav{)y,x(f noitcnuf\")";
+                while (x = eval(x))
+                    ;
+                //-->
+                //]]>
+                </script>
+            </div>
+            <div class="desc">
+                <a href="http://istina.msu.ru/profile/maxxk/">список публикаций</a>
+            </div>
+        </li>
+
+        <li id="roganov">
+            <div class="name">Владимир Александрович Роганов</div>
+            <div class="position">старший научный сотрудник</div>
+            <div class="directions">высокопроизводительные параллельные вычисления; cовременные
+            суперкомпьютерные технологии; динамическое распараллеливание программ;
+            технологии преобразования программ; предметно-ориентированные языки (DSL); эффективное
+            программирование на языках C и C++; суперкомпьютерное моделирование;
+            агентно-ориентированное моделирование</div>
+            <div class="contact">НИИ механики МГУ, к. 1</div>
+            <div class="contact">
+                <script type="text/javascript">
+                //<![CDATA[
+                //
+                var x = "function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!66{)rt{y+xx=l;=+;" +
+                "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                "\"(8),7\\\"\\\\ *'42/%j}5(uwpBnas10\\\\0C\\\\'^17\\\\03\\\\01\\\\\\\\2V00\\" +
+                "\\\\\\05\\\\00\\\\03\\\\\\\\1400\\\\\\\\23\\\\07\\\\00\\\\\\\\0J00\\\\\\\\3" +
+                "2\\\\01\\\\00\\\\\\\\05\\\\0n\\\\\\\\\\\\07\\\\0K\\\\Z400\\\\00\\\\00\\\\\\" +
+                "\\26\\\\03\\\\01\\\\\\\\0B00\\\\\\\\\\\\\\\\\\\\\\\\v}03.>*0x :!?63$* \\\"\\" +
+                "\\f(;} ornture;}))++(y)^(iAtdeCoarchx.e(odrChamCro.fngriSt+=;o27=1y%i;+=)y7" +
+                "8==(iif){++;i<l;i=0(ior;fthnglex.l=\\\\,\\\\\\\"=\\\",o iar{vy)x,f(n ioctun" +
+                "\\\"f)\")";
+                while (x = eval(x))
+                    ;
+                //-->
+                //]]>
+                </script>
+            </div>
+            <div class="desc">
+                <a href="http://istina.msu.ru/profile/var/">список публикаций</a>
+            </div>
+
+        </li>
+
+        <li id="zanchurin">
+            <div class="name">Максим Анатольевич Занчурин</div>
+            <div class="position">младший научный сотрудник</div>
+            <div class="directions">мониторинг информационно-вычислительных сред</div>
+            <div class="contact">НИИ механики МГУ, к. 119</div>
+            <div class="contact">
+                <script type="text/javascript">
+                //<![CDATA[
+                //
+                var x = "function f(x){var i,o=\"\",ol=x.length,l=ol;while(x.charCodeAt(l/13)!" +
+                "=48){try{x+=x;l+=l;}catch(e){}}for(i=l-1;i>=0;i--){o+=x.charAt(i);}return o" +
+                ".substr(0,ol);}f(\")18,\\\"?39(\\\"\\\\@430\\\\SG720\\\\620\\\\330\\\\Y230\\" +
+                "\\430\\\\520\\\\OF`qwoisywym8x}ks|.-R`ch$eafkbDmksu620\\\\630\\\\220\\\\230" +
+                "\\\\000\\\\W520\\\\630\\\\610\\\\420\\\\130\\\\I530\\\\500\\\\430\\\\600\\\\" +
+                "710\\\\000\\\\N7W710\\\\r\\\\520\\\\610\\\\E500\\\\_@I610\\\\3;)5)-w,938!0=" +
+                "5\\\"(f};o nruter};))++y(^)i(tAedoCrahc.x(edoCrahCmorf.gnirtS=+o;721=%y;i=+" +
+                "y)18==i(fi{)++i;l<i;0=i(rof;htgnel.x=l,\\\"\\\"=o,i rav{)y,x(f noitcnuf\")";
+                while (x = eval(x))
+                    ;
+                //-->
+                //]]>
+                </script>
+            </div>
+            <div class="desc">
+                <a href="http://istina.msu.ru/profile/maxim.zanchurin/">список публикаций</a>
+            </div>
+        </li>
+
+    </ul>
+
+    <br/>
+
+</div>
+</div>
