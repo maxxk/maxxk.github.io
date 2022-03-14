@@ -2,6 +2,8 @@
 
 [maxim.krivchikov@gmail.com](mailto:maxim.krivchikov@gmail.com)
 
+[maxim.krivchikov@math.msu.ru](mailto:maxim.krivchikov@math.msu.ru)
+
 [vk.com/maxim.krivchikov](https://vk.com/maxim.krivchikov)
 
 [https://vk.com/msumathprogx05](https://vk.com/msumathprogx05) — в группе VK есть видеозаписи вводных спецкурсов по системам типов в языках программирования:

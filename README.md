@@ -8,6 +8,8 @@ and in [page for my elective course in English](https://maxxk.github.io/programm
 
 [maxim.krivchikov@gmail.com](mailto:maxim.krivchikov@gmail.com)
 
+[maxim.krivchikov@math.msu.ru](mailto:maxim.krivchikov@math.msu.ru)
+
 Приветствую вас на моей странице на GitHub!
 
 Я — кандидат наук, старший научный сотрудник Московского государственного университета.
